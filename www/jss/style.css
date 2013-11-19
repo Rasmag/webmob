@@ -1,0 +1,127 @@
+/* 
+    Document   : style
+    Created on : 19 nov. 2013, 11:12:25
+    Author     : stage
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+body{
+    font-family: "arial";
+    font-size: 1.2em;
+    color: #333;
+    line-height: 1.5em;
+    margin:0;
+    padding: 0;
+    background-image: url('../img/bg-maison.png');
+    background-color: #aaa;
+}
+
+a{
+    text-decoration: none;
+}
+
+.clear{
+    clear: both;
+}
+
+.wrapper{
+    width: 100%;
+    display: block;
+    position: static;
+}
+
+#header{
+    display: block;
+    width: 980px;
+    margin: 0 auto;
+}
+
+#header .titre,#header img{
+    float: left;
+}
+
+#header h1{
+    color: red;
+    margin: 0;
+    padding: 0;
+}
+
+#header h2{
+    color: green;
+    margin: 0;
+    padding: 0;
+}
+
+#menu{
+    display: block;
+    width: 980px;
+    margin: 0 auto;
+}
+
+#menu ul{
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#menu li{
+    display: block;
+    width: 25%;
+    float: left;
+    background-color: #333;
+}
+
+#menu li :hover{
+    background-color: #e4e4e2
+}
+
+#menu li a{
+    color: #e4e4e2;
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+
+#content{
+    display: block;
+    width: 980px;
+    margin: 0 auto;
+    background: #e9e6e6;
+}
+
+#footerwrapper{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#footer{
+    display: block;
+    width: 980px;
+    margin: 0 auto;
+}
+
+#footer ul{
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#footer li{
+    display: block;
+    width: 25%;
+    float: left;
+}
+
+#footer li a{
+    color: black;
+    text-align: center;
+    width: 100%;
+    display: block;
+}
