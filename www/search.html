@@ -14,33 +14,33 @@
         <link rel="apple-touch-icon" sizes="72x72" href="img/logo-72.png" />
         <link rel="apple-touch-startup-image" href="img/splash-touch.png" />
 
-
+        <script type="text/javascript" lang="javascript" src="jss/search.js"></script>
+            
         <title>Titre de page</title>
     </head>
     <body>
-        <div class="wrapper">
+        <header>
             <a id="header" href="index.html">
                 <img src="img/logo-72.png">
-                <div class="titre">
+                <hgroup>
                     <h1>MyBd.fr</h1>
                     <h2>plein d'infos sur les BD</h2>
-                </div>
+                </hgroup>
             </a>
-        </div>
+        </header>
         <br class="clear"/>
         <div class="wrapper">
             <div id="menu">
-                <ul>
-                    <li><a href="search.html">Recherche</a></li>
-                    <li><a href="last.html">Last</a></li>
-                    <li><a href="random.html">Aleatoire</a></li>
-                    <li><a href="legal.html">Legal</a></li>
-                </ul>
+                <nav><a href="search.html">Recherche</a>    |
+                    <a href="last.html">Last</a>    |
+                    <a href="random.html">Aleatoire</a> |
+                    <a href="legal.html">Legal</a>  |
+                </nav>
             </div>
         </div>
         <br class="clear"/>
-        <div class="wrapper">
-            <div id="content">
+        <section>
+            <article>
                 <form action="search.html" name="search" method="GET">
                     <div>
                         <label for="auteur">Auteur</label>
@@ -70,18 +70,18 @@
                         <input type="submit" id="submit" value="Rechercher">
                     </div>
                 </form>
-            </div>
-        </div>
+            </article>
+        </section>
         <br class="clear"/>
         <div id="footerwrapper" class="wrapper">
-            <div id="footer">
-                <ul>
-                    <li><a href="search.html">Recherche</a></li>
-                    <li><a href="last.html">Last</a></li>
-                    <li><a href="random.html">Aleatoire</a></li>
-                    <li><a href="legal.html">Legal</a></li>
-                </ul>        
-            </div>
+            <footer>
+                <nav>
+                    <a href="search.html">Recherche</a>
+                    <a href="last.html">Last</a>
+                    <a href="random.html">Aleatoire</a>
+                    <a href="legal.html">Legal</a>
+                </nav>      
+            </footer>
         </div>
     </body>
 </html>
