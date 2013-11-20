@@ -1,0 +1,16 @@
+/* 
+    Document   : style-ui
+    Created on : 20 nov. 2013, 13:42:33
+    Author     : stage
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+input[name=annee]{
+    width: 85% !important;
+    margin-left: 100px !important
+}

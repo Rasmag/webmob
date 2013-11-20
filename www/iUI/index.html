@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <meta name="handheldfriendly" content="true"/>
+        <meta name="MobileOptimized" content="320"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <link rel="stylesheet" type="text/css" href="iui/t/default/default-theme.css">
+        <link rel="stylesheet" type="text/css" href="iui/iui.css">
+        <link rel="stylesheet" type="text/css" href="../jss/style-ui.css">  
+
+        <script type="text/javascript" src="iui/iui.js"></script>
+        <link rel="shortcut icon" href=../img/favicon.ico>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/logo-114.png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="../img/logo-57.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/logo-72.png" />
+        <link rel="apple-touch-startup-image" href="../img/splash-touch.png" />
+        <script type="text/javascript" src="../jss/lib.js"></script>
+        <script type="text/javascript">
+            gps.init(getPosition);
+
+            function getPosition() {
+                document.getElementById("Latitude").value = gps.get("latitude");
+                document.getElementById("Longitude").value = gps.get("longitude");
+            }
+        </script>
+        <title>Titre de page</title>
+    </head>
+    <body>
+        <div class="toolbar">
+            <h1 id="pageTitle">Titre de ma page</h1>
+            <a id="backButton" class="button" href="#">Retour</a>
+        </div>
+
+        <ul id="home" title="myBD.fr" selected="true">
+            <li><a href="#search">Recherche</a></li>
+            <li><a href="#last">Last</a></li>    
+            <li><a href="#random">Aleatoire</a></li> 
+            <li><a href="#legal">Legal</a></li>   
+        </ul>
+
+        <form id="search" title="Recherche" action="search.html" class="panel" name="Recherche" method="GET">
+            <fieldset>
+                <input class="whiteButton" type="submit" id="submit" value="Rechercher">
+                <a class="redButton" href="javascript:reInit()">Re-initialise</a>
+                <div class="row">
+                    <label for="auteur">Auteur</label>
+                    <input id="auteur" name="auteur" placeholder="Grégory">
+                </div>
+                <div class="row">
+                    <label for="nationalite">Nationalite</label>
+                    <input id="nationalite" name="nationalite" placeholder="Francais">
+                </div>
+                <div class="row">
+                    <label for="titre">Titre</label>
+                    <input id="titre" name="titre" placeholder="Life is life">
+                </div>
+                <div class="row">
+                    <label for="annee">Annee</label>
+                    <input type="range" name="annee" min="1970" max="2013">
+                </div>
+                <div class="row">
+                    <label for="prix">Prix</label>
+                    <input id="prix" name="prix"  placeholder="0.0">
+                </div>
+                <div class="row">
+                    <label for="dispo">Disponibilite</label>
+                    <input id="dispo" name="dispo"  placeholder="Disponible">
+                </div>
+            </fieldset>
+        </form>
+        
+        <video id="last" title="Last" class="panel" width="320" height="180" controls>
+            <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4">
+            <source src="http://clips.vorwaerts-gmbh.de/VfE.webm" type="video/webm">
+            <source src="http://clips.vorwaerts-gmbh.de/VfE.ogv" type="video/ogv">
+            Your browser does not support the video tag.
+        </video>
+
+        <div id="random" title="Aleatoire" class="panel">
+            <input type="button" value="Get Position" onclick="getPosition()"/>
+            <input id="Latitude" type="text" name="Latitude"/>
+            <input id="Longitude" type="text" name="Longitude" />
+        </div>
+        
+        <div id="legal" title="Legal" class="panel">
+            <p>Dans legal</p>
+        </div>
+    </body>
+</html>
