@@ -41,9 +41,9 @@
         </ul>
 
         <form id="search" title="Recherche" action="search.html" class="panel" name="Recherche" method="GET">
-            <input class="whiteButton" type="submit" id="submit" value="Rechercher">
-            <a class="redButton" href="javascript:reInit()">Re-initialise</a>
             <fieldset>
+                <input class="whiteButton" type="submit" id="submit" value="Rechercher">
+                <a class="redButton" href="javascript:reInit()">Re-initialise</a>
                 <div class="row">
                     <label for="auteur">Auteur</label>
                     <input id="auteur" name="auteur" placeholder="Grégory">
@@ -70,7 +70,7 @@
                 </div>
             </fieldset>
         </form>
-
+        
         <video id="last" title="Last" class="panel" width="320" height="180" controls>
             <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4">
             <source src="http://clips.vorwaerts-gmbh.de/VfE.webm" type="video/webm">
@@ -83,11 +83,9 @@
             <input id="Latitude" type="text" name="Latitude"/>
             <input id="Longitude" type="text" name="Longitude" />
         </div>
-
-        <table id="legal" title="Legal" class="panel">
-            <tr><th>Titre colonne 1</th><th>Titre colonne 2</th></tr>
-            <tr><td>Valeur colonne 1</td><td>Valeur colonne 2</td></tr>
-        </table>
-
+        
+        <div id="legal" title="Legal" class="panel">
+            <p>Dans legal</p>
+        </div>
     </body>
 </html>
