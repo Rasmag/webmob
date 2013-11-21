@@ -1,0 +1,30 @@
+/* 
+    Document   : style-jqm
+    Created on : 21 nov. 2013, 09:17:35
+    Author     : stage
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.ui-icon-search{
+    background-image: url(../jss/16x16/zoom.png);
+    background-position:initial;
+}
+
+.ui-icon-raz{
+    background-image: url(../jss/16x16/refresh.png);
+}
+
+.ui-icon-plus{
+    background-image: url(../jss/16x16/plus.png);
+}
+
+#geoMap{
+    background: #000;
+    height: 350px;
+    width: 500px;
+}
