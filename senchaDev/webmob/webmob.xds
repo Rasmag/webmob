@@ -1,0 +1,89 @@
+{
+    "name": "webmob",
+    "settings": {
+        "sdkPath": "C:/touch-2.2.0",
+        "urlPrefix": "",
+        "exportPath": "C:/Users/stage/Documents/NetBeansProjects/webmob/www/sencha"
+    },
+    "xdsVersion": "2.2.3",
+    "xdsBuild": 1039,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000503,
+    "framework": "touch22",
+    "topInstanceFileMap": {
+        "ad008dc5-d406-4220-99c8-749ee1487757": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "7568b0f9-491c-4081-b09c-a3621d4580a3": {
+            "paths": [
+                "metadata/resource/packager",
+                "",
+                "packager.json"
+            ],
+            "className": "packager"
+        },
+        "6e93eeef-3c25-4d7c-9139-6fee1e1f6b0d": {
+            "paths": [
+                "metadata/view/main",
+                "app/view/override/main.js",
+                "app/view/main.js"
+            ],
+            "className": "main"
+        },
+        "c22ea942-ca38-4ba7-982b-dc6aebcb4c1a": {
+            "paths": [
+                "metadata/resource/GoogleMapsAPI"
+            ],
+            "className": "GoogleMapsAPI"
+        },
+        "41cb0cad-c6ed-4c39-b492-6f48e85b73f1": {
+            "paths": [
+                "metadata/model/bd",
+                "app/model/override/bd.js",
+                "app/model/bd.js"
+            ],
+            "className": "bd"
+        },
+        "f81369b3-5219-4fb9-8ec2-fc2a2c75e400": {
+            "paths": [
+                "metadata/store/bdStore",
+                "app/store/override/bdStore.js",
+                "app/store/bdStore.js"
+            ],
+            "className": "bdStore"
+        },
+        "2208b131-6666-4de3-85fa-dd1f4da4500a": {
+            "paths": [
+                "metadata/controller/MainController",
+                "app/controller/override/MainController.js",
+                "app/controller/MainController.js"
+            ],
+            "className": "MainController"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "6e93eeef-3c25-4d7c-9139-6fee1e1f6b0d"
+        ],
+        "store": [
+            "f81369b3-5219-4fb9-8ec2-fc2a2c75e400"
+        ],
+        "controller": [
+            "2208b131-6666-4de3-85fa-dd1f4da4500a"
+        ],
+        "model": [
+            "41cb0cad-c6ed-4c39-b492-6f48e85b73f1"
+        ],
+        "resource": [
+            "ad008dc5-d406-4220-99c8-749ee1487757",
+            "7568b0f9-491c-4081-b09c-a3621d4580a3",
+            "c22ea942-ca38-4ba7-982b-dc6aebcb4c1a"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

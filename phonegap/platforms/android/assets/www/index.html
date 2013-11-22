@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html data-theme="b">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <meta name="handheldfriendly" content="true"/>
+        <meta name="MobileOptimized" content="320"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <link rel="shortcut icon" href=img/favicon.ico>
+        <link rel="apple-touch-icon" sizes="114x114" href="img/logo-114.png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="img/logo-57.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="img/logo-72.png" />
+        <link rel="apple-touch-startup-image" href="img/splash-touch.png" />
+        <link rel="stylesheet" href="jss/jquery.mobile-1.3.2.min.css" />
+
+        <script type="text/javascript" src="jss/lib_jqm.js"></script>
+        <script src="jss/jquery-1.9.1.min.js"></script>
+        <script src="jss/jquery.mobile-1.3.2.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="jss/style-jqm.css">  
+        <script type="text/javascript"
+                src="http://maps.google.com/maps/api/js?sensor=true">
+        </script>
+        <script type="text/javascript"
+                src="jss/jquery.ui.map.full.min.js">
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                gps.init(getPosition);
+
+                $("#ajouterMark").click(function(e) {
+                    addMarker($("#Latitude").val(), $("#Longitude").val());
+                    return false;
+                }
+                );
+
+                chargerListeBD();
+            });
+            function getPosition() {
+                document.getElementById("Latitude").value = gps.get("latitude");
+                document.getElementById("Longitude").value = gps.get("longitude");
+                displayGeo();
+            }
+
+            function displayGeo() {
+                $('#geoMap').gmap().bind('init', function(ev, map) {
+                    addMarker(gps.get("latitude"), gps.get("longitude"));
+                });
+            }
+
+            function addMarker(lat, long) {
+//                console.log(lat, long);
+//                return false;
+                $('#geoMap').gmap('addMarker', {'position': new google.maps.LatLng(lat, long), 'bounds': true}).click(function() {
+                    $('#geoMap').gmap('openInfoWindow', {'content': 'Votre position !!!<br/>' + gps.get("latitude") + "," + gps.get("longitude")}, this);
+                });
+            }
+
+            function chargerListeBD() {
+                var htmlfrag = null;
+                var tbody = null;
+                $.ajax({
+                    url: "bd.json",
+                    success: function(result) {
+                        if (result && result.success) {
+                            htmlfrag = $($(".bdrow")[0]);
+                            tbody = htmlfrag.parent();
+                            $(result.data).each(function(i,item) {
+                                var html = htmlfrag.clone();
+                                $('.bdrow_titre', html).text(item.nom);
+                                $('.bdrow_auteur', html).text(item.illustrateur);
+                                tbody.append(html);
+                            })
+                            htmlfrag.remove();
+                        }
+                        else {
+                            console.log("Erreur de reponse serveur");
+                        }
+
+                    }
+                });
+            }
+
+        </script>
+        <title>Titre de page</title>
+    </head>
+    <body>
+        <div id="home" data-role="page">
+            <div data-role="header"><h1>myBD.fr</h1></div>
+            <div data-role="content">
+                <ul data-role="listview">
+                    <li><a href="#search">Recherche</a></li>
+                    <li><a href="#last">Last</a></li>    
+                    <li><a href="#random">Aleatoire</a></li> 
+                    <li><a href="#legal">Legal</a></li>   
+                </ul>
+            </div>
+            <div data-role="footer" data-position="fixed"><h6>Pied de page</h6></div>
+        </div>
+
+        <div id="search" data-role="page" data-add-back-btn="true">
+            <div data-role="header"><h1>Recherche</h1></div>
+            <div data-role="content">
+                <form method="GET">
+                    <fieldset>
+                        <div class="row">
+                            <label for="auteur">Auteur</label>
+                            <input id="auteur" name="auteur" placeholder="Grégory">
+                        </div>
+                        <div class="row">
+                            <label for="nationalite">Nationalite</label>
+                            <input id="nationalite" name="nationalite" placeholder="Francais">
+                        </div>
+                        <div class="row">
+                            <label for="titre">Titre</label>
+                            <input id="titre" name="titre" placeholder="Life is life">
+                        </div>
+                        <div class="row">
+                            <label for="annee">Annee</label>
+                            <input type="range" name="annee" min="1970" max="2013">
+                        </div>
+                        <div class="row">
+                            <label for="prix">Prix</label>
+                            <input id="prix" name="prix"  placeholder="0.0">
+                        </div>
+                        <div class="row">
+                            <label for="dispo">Disponibilite</label>
+                            <input id="dispo" name="dispo"  placeholder="Disponible">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div data-role="footer" class="ui-bar" data-position="fixed">
+                <input data-role="button" data-icon="search" type="submit" value="Rechercher" data-theme="b">
+                <input data-role="button" data-icon="raz" type="submit" value="Re-initialise">
+            </div>
+        </div>
+
+        <div id="last" data-role="page" data-add-back-btn="true">
+            <div data-role="header"><h1>Last</h1></div>
+            <div data-role="content">
+                <video width="320" height="180" controls>
+                    <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4">
+                    <source src="http://clips.vorwaerts-gmbh.de/VfE.webm" type="video/webm">
+                    <source src="http://clips.vorwaerts-gmbh.de/VfE.ogv" type="video/ogv">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div data-role="footer" data-position="fixed"><h6>Pied de page</h6></div>
+        </div>
+
+        <div id="random" data-role="page" data-add-back-btn="true">
+            <div data-role="header"><h1>Aleatoire</h1></div>
+            <div data-role="content">
+                <input type="button" value="Get Position" onclick="getPosition()"/>
+                <input id="Latitude" type="text" name="Latitude"/>
+                <input id="Longitude" type="text" name="Longitude" />
+
+                <input id="ajouterMark" data-role="button" data-icon="plus" type="submit" value="Ajouter" data-theme="b">
+                <div id="geoMap" class="map rounded">
+
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed"><h6>Pied de page</h6></div>
+        </div>
+
+        <div id="legal" data-role="page" data-add-back-btn="true">
+            <div data-role="header"><h1>Legal</h1></div>
+            <div data-role="content">
+                <table border="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>Titre</th>
+                            <th>Auteur</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bdrow">
+                            <td class="bdrow_titre">Titre</td>
+                            <td class="bdrow_auteur">Auteur</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <div data-role="footer" data-position="fixed"><h6>Pied de page</h6></div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <meta name="handheldfriendly" content="true"/>
+        <meta name="MobileOptimized" content="320"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <link rel="stylesheet" type="text/css" href="jss/style.css">
+        <link rel="shortcut icon" href=img/favicon.ico>
+
+        <link rel="apple-touch-icon" sizes="114x114" href="img/logo-114.png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="img/logo-57.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="img/logo-72.png" />
+        <link rel="apple-touch-startup-image" href="img/splash-touch.png" />
+
+        <script type="text/javascript" src="jss/lib.js"></script>
+            
+        <title>Titre de page</title>
+    </head>
+    <body>
+        <header>
+            <a id="header" href="index.html">
+                <img src="img/logo-72.png">
+                <hgroup>
+                    <h1>MyBd.fr</h1>
+                    <h2>plein d'infos sur les BD</h2>
+                </hgroup>
+            </a>
+        </header>
+        <br class="clear"/>
+        <div class="wrapper">
+            <div id="menu">
+                <nav><a href="search.html">Recherche</a>    |
+                    <a href="last.html">Last</a>    |
+                    <a href="random.html">Aleatoire</a> |
+                    <a href="legal.html">Legal</a>  |
+                </nav>
+            </div>
+        </div>
+        <br class="clear"/>
+        <section>
+            <article>
+                <form action="search.html" name="search" method="GET">
+                    <div>
+                        <label for="auteur">Auteur</label>
+                        <input id="auteur" name="auteur">
+                    </div>
+                    <div>
+                        <label for="nationalite">Nationalite</label>
+                        <input id="nationalite" name="nationalite">
+                    </div>
+                    <div>
+                        <label for="titre">Titre</label>
+                        <input id="titre" name="titre">
+                    </div>
+                    <div>
+                        <label for="annee">Annee</label>
+                        1970<input type="range" name="annee" min="1970" max="2013">2013
+                    </div>
+                    <div>
+                        <label for="prix">Prix</label>
+                        <input id="prix" name="prix">
+                    </div>
+                    <div>
+                        <label for="dispo">Disponibilite;</label>
+                        <input id="dispo" name="dispo">
+                    </div>
+                    <div>
+                        <input type="submit" id="submit" value="Rechercher">
+                    </div>
+                </form>
+            </article>
+        </section>
+        <br class="clear"/>
+        <div id="footerwrapper" class="wrapper">
+            <footer>
+                <nav>
+                    <a href="search.html">Recherche</a>
+                    <a href="last.html">Last</a>
+                    <a href="random.html">Aleatoire</a>
+                    <a href="legal.html">Legal</a>
+                </nav>      
+            </footer>
+        </div>
+    </body>
+</html>

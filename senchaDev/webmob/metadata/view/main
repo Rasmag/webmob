@@ -1,0 +1,148 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "main",
+        "designer|initialView": true
+    },
+    "designerId": "6e93eeef-3c25-4d7c-9139-6fee1e1f6b0d",
+    "cn": [
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Accueil",
+                "iconCls": "home",
+                "html": "<h1>Accueil</h1>",
+                "styleHtmlContent": true
+            },
+            "designerId": "bf52eeeb-849e-496c-b733-be97d8c29427"
+        },
+        {
+            "type": "Ext.carousel.Carousel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "caroussel",
+                "iconCls": "search",
+                "html": ""
+            },
+            "designerId": "111f0499-6799-491a-8e3a-2c20a781ca58",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "<h1>Fiche 1</h1>",
+                        "styleHtmlContent": true
+                    },
+                    "designerId": "58ace8cc-f111-4416-8c1b-7b6bb9823cda"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "<h1>Fiche 2</h1>",
+                        "styleHtmlContent": true
+                    },
+                    "designerId": "0cefb12f-e718-4b34-95c1-33ece46a195e"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "<h1>Fiche 3</h1>",
+                        "styleHtmlContent": true
+                    },
+                    "designerId": "1bf5f94e-4cab-4769-b61a-04dda5021e01"
+                }
+            ]
+        },
+        {
+            "type": "Ext.dataview.List",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "liste",
+                "iconCls": "compose",
+                "html": "",
+                "id": "idListeBD",
+                "itemId": "idListeBD",
+                "store": "bdStore"
+            },
+            "designerId": "21554cad-2663-4bd7-8cf6-6559223a4fa0",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "implHandler": [
+                            "<div id=\"{id}\">{nom} - {illustrateur}</div>"
+                        ],
+                        "designer|displayName": "itemTpl"
+                    },
+                    "designerId": "f42b9f44-f798-4b79-870a-0f4800f33ad2"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Map",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Carte",
+                "iconCls": "maps",
+                "centered": false,
+                "html": "",
+                "styleHtmlContent": true,
+                "useCurrentLocation": true
+            },
+            "designerId": "7b9ec635-8452-410a-82d0-9f4abc85ec89"
+        },
+        {
+            "type": "Ext.tab.Bar",
+            "reference": {
+                "name": "tabBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "bottom"
+            },
+            "designerId": "bccb4248-f712-49d6-b6f1-ce30704d4523"
+        }
+    ]
+}

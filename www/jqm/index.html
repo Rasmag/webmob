@@ -30,12 +30,11 @@
                 $("#ajouterMark").click(function(e) {
                     addMarker($("#Latitude").val(), $("#Longitude").val());
                     return false;
-                    
                 }
                 );
+
+                chargerListeBD();
             });
-
-
             function getPosition() {
                 document.getElementById("Latitude").value = gps.get("latitude");
                 document.getElementById("Longitude").value = gps.get("longitude");
@@ -46,7 +45,6 @@
                 $('#geoMap').gmap().bind('init', function(ev, map) {
                     addMarker(gps.get("latitude"), gps.get("longitude"));
                 });
-
             }
 
             function addMarker(lat, long) {
@@ -57,7 +55,30 @@
                 });
             }
 
+            function chargerListeBD() {
+                var htmlfrag = null;
+                var tbody = null;
+                $.ajax({
+                    url: "bd.json",
+                    success: function(result) {
+                        if (result && result.success) {
+                            htmlfrag = $($(".bdrow")[0]);
+                            tbody = htmlfrag.parent();
+                            $(result.data).each(function(i,item) {
+                                var html = htmlfrag.clone();
+                                $('.bdrow_titre', html).text(item.nom);
+                                $('.bdrow_auteur', html).text(item.illustrateur);
+                                tbody.append(html);
+                            })
+                            htmlfrag.remove();
+                        }
+                        else {
+                            console.log("Erreur de reponse serveur");
+                        }
 
+                    }
+                });
+            }
 
         </script>
         <title>Titre de page</title>
@@ -144,7 +165,23 @@
 
         <div id="legal" data-role="page" data-add-back-btn="true">
             <div data-role="header"><h1>Legal</h1></div>
-            <div data-role="content">Dans legal</div>
+            <div data-role="content">
+                <table border="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>Titre</th>
+                            <th>Auteur</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bdrow">
+                            <td class="bdrow_titre">Titre</td>
+                            <td class="bdrow_auteur">Auteur</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
             <div data-role="footer" data-position="fixed"><h6>Pied de page</h6></div>
         </div>
     </body>

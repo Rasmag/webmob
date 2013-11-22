@@ -1,0 +1,14 @@
+{
+    "success": true,
+    "message": "Liste de Greg",
+    "data": [
+            {"id": 1, "nom": "Elem1","tabElem":[
+            {"id": 1, "nom": "1 - Asterix"},
+            {"id": 2, "nom": "1 - lucky luke"}
+        ]},
+        {"id": 2, "nom": "Elem2","tabElem":[
+            {"id": 1, "nom": "2 - Asterix"},
+            {"id": 2, "nom": "2 - lucky luke"}
+        ]}
+    ]
+}

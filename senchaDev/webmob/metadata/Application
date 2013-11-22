@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "views": [
+            "main"
+        ],
+        "controllers": [
+            "MainController"
+        ],
+        "name": "devmob"
+    },
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "console.log(\"Lancement de l'application\");"
+                ]
+            },
+            "designerId": "8a853e5b-5c82-4b70-912a-697323d925e6"
+        }
+    ]
+}
